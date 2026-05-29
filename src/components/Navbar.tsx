@@ -4,6 +4,7 @@ const items = [
   { id: "hero", symbol: "○", label: "intro" },
   { id: "doodles", symbol: "✦", label: "chaos" },
   { id: "confession", symbol: "☁", label: "truth" },
+  { id: "memories", symbol: "◎", label: "memories" },
   { id: "decision", symbol: "♡", label: "us" },
 ];
 

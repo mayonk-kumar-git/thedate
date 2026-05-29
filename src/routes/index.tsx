@@ -6,6 +6,7 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { Doodles } from "@/components/sections/Doodles";
 import { Confession } from "@/components/sections/Confession";
+import { Memories } from "@/components/sections/Memories";
 import { Decision } from "@/components/sections/Decision";
 import { Success } from "@/components/sections/Success";
 
@@ -111,6 +112,7 @@ function Index() {
         <Hero />
         <Doodles />
         <Confession />
+        <Memories />
         <Decision onYes={handleYes} />
         {showSuccess && <Success />}
       </div>
