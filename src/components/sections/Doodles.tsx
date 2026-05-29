@@ -154,9 +154,6 @@ export function Doodles() {
                 <p className="hand text-base opacity-70">{c.footer}</p>
               </footer>
 
-              {i === 1 && (
-                <p className="hand absolute -top-3 -right-2 text-sm text-[var(--gold)] rotate-6">keep scrolling →</p>
-              )}
               {i === 4 && (
                 <p className="hand absolute -bottom-4 left-4 text-sm opacity-60 -rotate-3">more chaos ahead</p>
               )}
