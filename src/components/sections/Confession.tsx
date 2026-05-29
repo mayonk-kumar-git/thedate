@@ -25,9 +25,7 @@ export function Confession() {
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: false, amount: 0.6 }}
                 transition={{ duration: 1.6, delay: 0.4 + j * 0.9, ease: [0.22, 1, 0.36, 1] }}
-                className={`serif italic leading-[1.25] text-cream ${
-                  lines.length === 1 ? "text-3xl sm:text-5xl" : "text-2xl sm:text-4xl mt-4"
-                }`}
+                className="serif italic leading-[1.25] text-cream text-2xl sm:text-4xl mt-4"
               >
                 {line}
               </motion.p>
