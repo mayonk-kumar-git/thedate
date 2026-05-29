@@ -38,8 +38,8 @@ export function Loading({ onDone }: { onDone: () => void }) {
 
   useEffect(() => {
     if (phase !== "final") return;
-    const t1 = setTimeout(() => setPhase("out"), 6000);
-    const t2 = setTimeout(() => onDone(), 7200);
+    const t1 = setTimeout(() => setPhase("out"), 4000);
+    const t2 = setTimeout(() => onDone(), 5200);
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, [phase, onDone]);
 
