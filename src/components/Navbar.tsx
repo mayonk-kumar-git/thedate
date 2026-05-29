@@ -5,18 +5,17 @@ const items = [
   { id: "doodles", symbol: "✦", label: "chaos" },
   { id: "confession", symbol: "☁", label: "truth" },
   { id: "decision", symbol: "♡", label: "us" },
-  { id: "final", symbol: "✧", label: "decision" },
 ];
 
-export function SideNav({ active, onJump }: { active: string; onJump: (id: string) => void }) {
+export function Navbar({ active, onJump }: { active: string; onJump: (id: string) => void }) {
   return (
     <motion.nav
-      initial={{ opacity: 0, x: -10 }}
-      animate={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.6, duration: 0.8 }}
-      className="fixed left-3 sm:left-5 top-1/2 -translate-y-1/2 z-50"
+      className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50"
     >
-      <ul className="flex flex-col gap-3 rounded-full border border-white/10 bg-black/30 backdrop-blur-md px-2 py-3">
+      <ul className="flex flex-row gap-5 rounded-full border border-white/10 bg-black/30 backdrop-blur-md px-4 py-2">
         {items.map((it) => {
           const isActive = active === it.id;
           return (

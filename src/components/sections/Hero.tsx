@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Hero() {
   return (
-    <section id="hero" data-section="hero" className="min-h-screen relative flex items-center justify-center snap-start">
+    <section id="hero" data-section="hero" className="min-h-screen relative flex items-center justify-center snap-start pb-20">
       <div className="absolute inset-0 ambient pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />
       <div className="grain absolute inset-0 pointer-events-none" />
@@ -68,7 +68,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 5, duration: 1 }}
-        className="absolute bottom-8 left-0 right-0 flex flex-col items-center gap-2"
+        className="absolute bottom-24 left-0 right-0 flex flex-col items-center gap-2"
       >
         <span className="text-[10px] tracking-[0.4em] text-white/40 uppercase">scroll</span>
         <motion.div

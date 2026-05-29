@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Loading } from "@/components/Loading";
-import { SideNav } from "@/components/SideNav";
+import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { Doodles } from "@/components/sections/Doodles";
 import { Confession } from "@/components/sections/Confession";
@@ -51,6 +51,7 @@ function Index() {
   }, [loading, showSuccess]);
 
   const jumpTo = (id: string) => {
+    setActive(id);
     const target = document.querySelector<HTMLElement>(`[data-section="${id}"]`);
     target?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
@@ -68,7 +69,7 @@ function Index() {
         {loading && <Loading onDone={() => setLoading(false)} />}
       </AnimatePresence>
 
-      {!loading && <SideNav active={active} onJump={jumpTo} />}
+      <Navbar active={active} onJump={jumpTo} />
 
       <Hero />
       <Doodles />

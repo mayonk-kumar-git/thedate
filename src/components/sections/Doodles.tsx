@@ -108,7 +108,7 @@ export function Doodles() {
   }, []);
 
   return (
-    <section id="doodles" data-section="doodles" className="min-h-screen relative flex flex-col justify-center snap-start"
+    <section id="doodles" data-section="doodles" className="min-h-screen relative flex flex-col justify-center snap-start pb-20"
       style={{ background: "linear-gradient(180deg, oklch(0.18 0.03 270) 0%, oklch(0.22 0.04 60) 50%, oklch(0.16 0.03 280) 100%)" }}>
       <div className="grain absolute inset-0" />
 
