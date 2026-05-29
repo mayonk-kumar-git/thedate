@@ -179,4 +179,11 @@
 }
 .floaty { animation: floaty 2.4s ease-in-out infinite; }
 
-/* hide scrollbar visually - disabled for debugging scroll issues */
+/* hide scrollbar visually */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Hero() {
   return (
-    <section id="hero" data-section="hero" className="min-h-screen relative flex items-center justify-center">
+    <section id="hero" data-section="hero" className="min-h-screen relative flex items-center justify-center snap-start">
       <div className="absolute inset-0 ambient pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />
       <div className="grain absolute inset-0 pointer-events-none" />

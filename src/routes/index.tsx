@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Loading } from "@/components/Loading";
 import { SideNav } from "@/components/SideNav";
@@ -29,10 +29,13 @@ function Index() {
   const [loading, setLoading] = useState(true);
   const [active, setActive] = useState("hero");
   const [showSuccess, setShowSuccess] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (loading) return;
-    const sections = document.querySelectorAll<HTMLElement>("[data-section]");
+    const container = scrollRef.current;
+    if (!container) return;
+    const sections = container.querySelectorAll<HTMLElement>("[data-section]");
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -41,7 +44,7 @@ function Index() {
           }
         });
       },
-      { threshold: [0.5, 0.75] }
+      { root: container, threshold: [0.5, 0.75] }
     );
     sections.forEach((s) => io.observe(s));
     return () => io.disconnect();
@@ -49,7 +52,7 @@ function Index() {
 
   const jumpTo = (id: string) => {
     const target = document.querySelector<HTMLElement>(`[data-section="${id}"]`);
-    target?.scrollIntoView({ behavior: "smooth" });
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const handleYes = () => {
@@ -60,7 +63,7 @@ function Index() {
   };
 
   return (
-    <div className="relative w-full bg-background text-foreground">
+    <div ref={scrollRef} className="relative w-full h-dvh overflow-y-auto overflow-x-hidden snap-y snap-mandatory bg-background text-foreground scrollbar-hide">
       <AnimatePresence>
         {loading && <Loading onDone={() => setLoading(false)} />}
       </AnimatePresence>
