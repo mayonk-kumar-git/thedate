@@ -29,7 +29,7 @@ export function Hero() {
 
         <h1 className="serif mt-10 text-4xl sm:text-6xl leading-[1.05] text-cream tracking-tight">
           Will you go on a<br />
-          <span className="italic text-[var(--gold)]">first date</span> with me?
+          <span className="italic text-[var(--gold)]">date</span> with me?
         </h1>
 
         <p className="mt-8 text-[10px] text-white/35 font-light tracking-wide">
