@@ -32,13 +32,11 @@ export function Decision({ onYes }: { onYes: () => void }) {
     <section id="decision" data-section="decision" className="min-h-screen relative flex items-center justify-center snap-start pb-20">
 
       <div className="relative z-10 w-full max-w-md px-6 text-center">
-        <p className="text-[10px] tracking-[0.4em] text-[var(--gold)]/80 uppercase">Section · V</p>
-        <h2 className="serif mt-3 text-3xl sm:text-4xl text-cream">Final Decision Portal</h2>
-        <p className="mt-2 text-sm text-white/55">Please review your options carefully.</p>
 
         <div className="mt-12">
-          <p className="serif italic text-2xl sm:text-3xl text-cream leading-snug">
-            Would you like to go on a date with me?
+          <p className="serif text-3xl sm:text-5xl leading-[1.05] text-cream tracking-tight">
+            Would you like to go on a<br />
+            <span className="italic text-[var(--gold)]">date</span> with me?
           </p>
           <p className="mt-3 text-xs text-white/45 tracking-wide">This action may be irreversible.</p>
         </div>
