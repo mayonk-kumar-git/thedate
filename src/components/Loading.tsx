@@ -116,7 +116,7 @@ export function Loading({ onDone }: { onDone: () => void }) {
               transition={{ duration: 2.6, ease: [0.22, 1, 0.36, 1] }}
               className="serif italic text-cream text-xl sm:text-2xl leading-relaxed"
             >
-              curated for the most wonderful<br/>person in the whole world
+              curated for the most beautiful<br/>soul in the whole world
             </motion.p>
           )}
         </AnimatePresence>

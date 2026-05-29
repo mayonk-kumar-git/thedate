@@ -2,10 +2,10 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const popups = [
-  "wow. rude.",
-  "interesting decision.",
-  "this is emotionally expensive.",
-  "reconsidering your choices is free.",
+  "Bold choice.",
+  "I genuinely didn't think you'd press that.",
+  "That wasn't very future-wife-like behavior.",
+  "Forehead kiss. Final offer.",
   "",
 ];
 
