@@ -10,7 +10,7 @@ import img6 from "@/images/confession/confession_6.png";
 
 const slides = [
   { lines: ["We met when neither of us was searching."], image: img1 },
-  { lines: ["And somehow…", "among billions of people…", "we found each other anyway."], image: img2 },
+  { lines: ["And somehow, after eight years of becoming who we were meant to be…", "two completely different journeys found their way to the same destination."], image: img2 },
   { lines: ["Maybe that's what magic looks like."], image: img3 },
   { lines: ["You started feeling like home so naturally", "that I didn't even notice when it happened."], image: img4 },
   { lines: ["Same soul.", "Different bodies."], image: img5 },
