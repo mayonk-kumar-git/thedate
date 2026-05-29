@@ -3,9 +3,6 @@ import { motion } from "framer-motion";
 export function Success() {
   return (
     <section id="final" data-section="final" className="min-h-screen relative flex items-center justify-center snap-start pb-20">
-      <div className="absolute inset-0 ambient" />
-      <div className="absolute inset-0 bg-gradient-radial" style={{ background: "radial-gradient(ellipse at 50% 40%, oklch(0.82 0.11 78 / 0.18), transparent 60%)" }} />
-      <div className="grain absolute inset-0" />
 
       {Array.from({ length: 18 }).map((_, i) => (
         <motion.span

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Loading } from "@/components/Loading";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
@@ -63,19 +63,41 @@ function Index() {
     });
   };
 
+  const backgrounds: Record<string, string> = {
+    hero: "linear-gradient(180deg, oklch(0.18 0.05 260) 0%, oklch(0.2 0.07 290) 50%, oklch(0.16 0.05 300) 100%)",
+    doodles: "linear-gradient(180deg, oklch(0.18 0.05 260) 0%, oklch(0.2 0.07 290) 50%, oklch(0.16 0.05 300) 100%)",
+    confession: "linear-gradient(180deg, oklch(0.18 0.05 260) 0%, oklch(0.2 0.07 290) 50%, oklch(0.16 0.05 300) 100%)",
+    decision: "linear-gradient(180deg, oklch(0.18 0.05 260) 0%, oklch(0.2 0.07 290) 50%, oklch(0.16 0.05 300) 100%)",
+    final: "linear-gradient(180deg, oklch(0.18 0.05 260) 0%, oklch(0.2 0.07 290) 50%, oklch(0.16 0.05 300) 100%)",
+  };
+
   return (
-    <div ref={scrollRef} className="relative w-full h-dvh overflow-y-auto overflow-x-hidden snap-y snap-mandatory bg-background text-foreground scrollbar-hide">
-      <AnimatePresence>
-        {loading && <Loading onDone={() => setLoading(false)} />}
-      </AnimatePresence>
+    <div className="relative w-full h-dvh">
+      {/* Fixed background that crossfades */}
+      {Object.entries(backgrounds).map(([id, bg]) => (
+        <motion.div
+          key={id}
+          animate={{ opacity: active === id ? 1 : 0 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="fixed inset-0 z-0 pointer-events-none"
+          style={{ background: bg }}
+        />
+      ))}
+      <div className="fixed inset-0 z-0 pointer-events-none grain" />
 
-      <Navbar active={active} onJump={jumpTo} />
+      <div ref={scrollRef} className="relative z-10 w-full h-dvh overflow-y-auto overflow-x-hidden snap-y snap-mandatory text-foreground scrollbar-hide">
+        <AnimatePresence>
+          {loading && <Loading onDone={() => setLoading(false)} />}
+        </AnimatePresence>
 
-      <Hero />
-      <Doodles />
-      <Confession />
-      <Decision onYes={handleYes} />
-      {showSuccess && <Success />}
+        <Navbar active={active} onJump={jumpTo} />
+
+        <Hero />
+        <Doodles />
+        <Confession />
+        <Decision onYes={handleYes} />
+        {showSuccess && <Success />}
+      </div>
     </div>
   );
 }

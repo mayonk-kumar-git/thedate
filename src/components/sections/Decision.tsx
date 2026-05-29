@@ -29,9 +29,7 @@ export function Decision({ onYes }: { onYes: () => void }) {
   const heartsLine = "❤".repeat(lives) + "♡".repeat(5 - lives);
 
   return (
-    <section id="decision" data-section="decision" className="min-h-screen relative flex items-center justify-center snap-start pb-20 ambient">
-      <div className="absolute inset-0 bg-black/40" />
-      <div className="grain absolute inset-0" />
+    <section id="decision" data-section="decision" className="min-h-screen relative flex items-center justify-center snap-start pb-20">
 
       <div className="relative z-10 w-full max-w-md px-6 text-center">
         <p className="text-[10px] tracking-[0.4em] text-[var(--gold)]/80 uppercase">Section · V</p>

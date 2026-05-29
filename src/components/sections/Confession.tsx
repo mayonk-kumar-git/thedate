@@ -16,9 +16,7 @@ export function Confession() {
         <div
           key={i}
           className="min-h-screen relative flex items-center justify-center snap-start pb-20"
-          style={{ background: "var(--gradient-midnight)" }}
         >
-          <div className="grain absolute inset-0 opacity-50" />
           <div className="relative z-10 px-8 max-w-xl text-center">
             {lines.map((line, j) => (
               <motion.p
