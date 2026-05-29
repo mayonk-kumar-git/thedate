@@ -24,13 +24,12 @@ type Bubble = {
 };
 
 const futurePlaceholders = [
+  "awaiting a sunset together",
   "future memory loading...",
+  "loading shared laughter...",
+  "placeholder for our first trip",
   "reserved for spontaneous adventures",
   "photo not taken yet",
-  "loading shared laughter...",
-  "memory under construction",
-  "placeholder for our first trip",
-  "awaiting a sunset together",
 ];
 
 const bubbles: Bubble[] = [
