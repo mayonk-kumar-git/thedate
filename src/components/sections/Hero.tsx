@@ -58,7 +58,7 @@ export function Hero() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 1.4, delay: 4 }}
-          className="mt-8 text-sm text-white/55 font-light tracking-wide"
+          className="mt-8 text-[10px] text-white/35 font-light tracking-wide"
         >
           Carefully designed after an unreasonable amount of overthinking.
         </motion.p>
