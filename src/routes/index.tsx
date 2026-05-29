@@ -83,7 +83,8 @@ function Index() {
   const backgrounds: Record<string, string> = {
     hero: "linear-gradient(180deg, oklch(0.18 0.05 260) 0%, oklch(0.2 0.07 290) 50%, oklch(0.16 0.05 300) 100%)",
     doodles: "linear-gradient(180deg, oklch(0.18 0.05 260) 0%, oklch(0.2 0.07 290) 50%, oklch(0.16 0.05 300) 100%)",
-    confession: "linear-gradient(180deg, oklch(0.18 0.05 260) 0%, oklch(0.2 0.07 290) 50%, oklch(0.16 0.05 300) 100%)",
+    confession: "linear-gradient(135deg, oklch(0.12 0.05 270) 0%, oklch(0.15 0.06 250) 50%, oklch(0.1 0.04 280) 100%)",
+    memories: "linear-gradient(135deg, oklch(0.12 0.05 270) 0%, oklch(0.15 0.06 250) 50%, oklch(0.1 0.04 280) 100%)",
     decision: "linear-gradient(180deg, oklch(0.18 0.05 260) 0%, oklch(0.2 0.07 290) 50%, oklch(0.16 0.05 300) 100%)",
     final: "linear-gradient(180deg, oklch(0.18 0.05 260) 0%, oklch(0.2 0.07 290) 50%, oklch(0.16 0.05 300) 100%)",
   };
