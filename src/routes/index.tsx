@@ -32,23 +32,39 @@ function Index() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (loading) return;
     const container = scrollRef.current;
     if (!container) return;
-    const sections = container.querySelectorAll<HTMLElement>("[data-section]");
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting && e.intersectionRatio > 0.5) {
-            setActive(e.target.getAttribute("data-section") || "hero");
-          }
-        });
-      },
-      { root: container, threshold: [0.5, 0.75] }
-    );
-    sections.forEach((s) => io.observe(s));
-    return () => io.disconnect();
-  }, [loading, showSuccess]);
+
+    const updateActive = () => {
+      const sections = container.querySelectorAll<HTMLElement>("[data-section]");
+      const containerTop = container.getBoundingClientRect().top;
+      const containerHeight = container.clientHeight;
+      const center = containerTop + containerHeight / 2;
+
+      let closest: string | null = null;
+      let closestDist = Infinity;
+
+      sections.forEach((s) => {
+        const rect = s.getBoundingClientRect();
+        const sectionCenter = rect.top + rect.height / 2;
+        const dist = Math.abs(sectionCenter - center);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closest = s.getAttribute("data-section");
+        }
+      });
+
+      if (closest) setActive(closest);
+    };
+
+    container.addEventListener("scrollend", updateActive, { passive: true });
+    container.addEventListener("scroll", updateActive, { passive: true });
+    updateActive();
+    return () => {
+      container.removeEventListener("scrollend", updateActive);
+      container.removeEventListener("scroll", updateActive);
+    };
+  }, [showSuccess]);
 
   const jumpTo = (id: string) => {
     setActive(id);
