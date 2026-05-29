@@ -125,14 +125,13 @@ export function Doodles() {
           return (
             <motion.article
               key={i}
-              className="snap-card paper-card wobble-border shrink-0 w-[82vw] max-w-[360px] h-[62vh] max-h-[520px] p-6 flex flex-col"
+              className="snap-card paper-card wobble-border shrink-0 w-[82vw] max-w-[360px] h-[62vh] max-h-[520px] p-6 flex flex-col shadow-[0_0_40px_-5px_rgba(255,255,255,0.25)]"
               style={{
-                transform: `rotate(${c.rotate}deg)`,
                 ...(isDeep ? { background: "oklch(0.18 0.03 270)", color: "var(--cream)", borderColor: "oklch(0.4 0.05 80 / 0.6)" } : {}),
               }}
               animate={{
                 scale: isActive ? 1 : 0.94,
-                rotate: isActive ? 0 : c.rotate,
+                rotate: isActive ? 0 : i < active ? -4 : 4,
                 opacity: isActive ? 1 : 0.7,
               }}
               transition={{ type: "spring", stiffness: 180, damping: 22 }}
