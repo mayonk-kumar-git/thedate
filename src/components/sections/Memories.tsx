@@ -34,17 +34,17 @@ const futurePlaceholders = [
 
 const bubbles: Bubble[] = [
   // My memories - scattered around the sphere
-  { id: 1, type: "mine", size: 72, x: 15, y: 12, delay: 0, label: "", caption: "One of my favorite days.", image: mine1 },
-  { id: 2, type: "mine", size: 62, x: 68, y: 8, delay: 0.8, label: "", caption: "A quiet moment I kept.", image: mine2 },
-  { id: 3, type: "mine", size: 58, x: 3, y: 48, delay: 1.4, label: "", caption: "Before I knew you existed.", image: mine3 },
+  { id: 1, type: "mine", size: 72, x: 15, y: 12, delay: 0, label: "", caption: "", image: mine1 },
+  { id: 2, type: "mine", size: 62, x: 68, y: 8, delay: 0.8, label: "", caption: "", image: mine2 },
+  { id: 3, type: "mine", size: 58, x: 3, y: 48, delay: 1.4, label: "", caption: "", image: mine3 },
   // Her memories - mid ring
-  { id: 4, type: "hers", size: 68, x: 72, y: 45, delay: 0.3, label: "", caption: "One of my favorite smiles.", image: hers1 },
-  { id: 5, type: "hers", size: 60, x: 12, y: 72, delay: 1.1, label: "", caption: "You, being effortlessly you.", image: hers2 },
-  { id: 6, type: "hers", size: 64, x: 65, y: 78, delay: 0.6, label: "", caption: "A moment I want to keep.", image: hers3 },
+  { id: 4, type: "hers", size: 68, x: 72, y: 45, delay: 0.3, label: "", caption: "", image: hers1 },
+  { id: 5, type: "hers", size: 60, x: 12, y: 72, delay: 1.1, label: "", caption: "", image: hers2 },
+  { id: 6, type: "hers", size: 64, x: 65, y: 78, delay: 0.6, label: "", caption: "", image: hers3 },
   // Our memories - center cluster
-  { id: 7, type: "ours", size: 82, x: 32, y: 32, delay: 0.2, label: "", caption: "The beginning of something.", image: ours1 },
-  { id: 8, type: "ours", size: 76, x: 45, y: 52, delay: 0.9, label: "", caption: "Us, without even trying.", image: ours2 },
-  { id: 9, type: "ours", size: 70, x: 28, y: 58, delay: 1.5, label: "", caption: "Already feels like home.", image: ours3 },
+  { id: 7, type: "ours", size: 82, x: 32, y: 32, delay: 0.2, label: "", caption: "", image: ours1 },
+  { id: 8, type: "ours", size: 76, x: 45, y: 52, delay: 0.9, label: "", caption: "", image: ours2 },
+  { id: 9, type: "ours", size: 70, x: 28, y: 58, delay: 1.5, label: "", caption: "", image: ours3 },
   // Future memories - outer ring
   { id: 10, type: "future", size: 66, x: 42, y: 2, delay: 0.5, label: futurePlaceholders[0], caption: "Future memory slot available." },
   { id: 11, type: "future", size: 60, x: 82, y: 25, delay: 1.2, label: futurePlaceholders[1], caption: "Future memory slot available." },
