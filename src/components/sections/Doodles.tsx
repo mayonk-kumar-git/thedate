@@ -111,8 +111,8 @@ export function Doodles() {
     <section id="doodles" data-section="doodles" className="min-h-screen relative flex flex-col justify-center snap-start pb-20">
 
       <div className="relative z-10 pt-8 px-6 text-center">
-        <p className="hand text-2xl text-[var(--cream)]/90">terms &amp; conditions</p>
-        <p className="text-[11px] tracking-[0.3em] text-white/40 uppercase mt-1">scroll sideways →</p>
+        <p className="hand text-2xl text-ink/90">terms &amp; conditions</p>
+        <p className="text-[11px] tracking-[0.3em] text-ink/40 uppercase mt-1">scroll sideways →</p>
       </div>
 
       <div
@@ -164,7 +164,7 @@ export function Doodles() {
 
       <div className="relative z-10 flex justify-center gap-1.5 pb-6">
         {cards.map((_, i) => (
-          <span key={i} className={`h-1 rounded-full transition-all duration-500 ${i===active ? "w-6 bg-[var(--gold)]" : "w-1.5 bg-white/25"}`} />
+          <span key={i} className={`h-1 rounded-full transition-all duration-500 ${i===active ? "w-6 bg-[var(--gold)]" : "w-1.5 bg-ink/20"}`} />
         ))}
       </div>
     </section>

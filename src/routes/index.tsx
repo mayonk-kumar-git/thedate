@@ -81,12 +81,12 @@ function Index() {
   };
 
   const backgrounds: Record<string, string> = {
-    hero: "linear-gradient(180deg, oklch(0.18 0.05 260) 0%, oklch(0.2 0.07 290) 50%, oklch(0.16 0.05 300) 100%)",
-    doodles: "linear-gradient(180deg, oklch(0.18 0.05 260) 0%, oklch(0.2 0.07 290) 50%, oklch(0.16 0.05 300) 100%)",
-    confession: "linear-gradient(135deg, oklch(0.12 0.05 270) 0%, oklch(0.15 0.06 250) 50%, oklch(0.1 0.04 280) 100%)",
-    memories: "linear-gradient(135deg, oklch(0.12 0.05 270) 0%, oklch(0.15 0.06 250) 50%, oklch(0.1 0.04 280) 100%)",
-    decision: "linear-gradient(180deg, oklch(0.18 0.05 260) 0%, oklch(0.2 0.07 290) 50%, oklch(0.16 0.05 300) 100%)",
-    final: "linear-gradient(180deg, oklch(0.18 0.05 260) 0%, oklch(0.2 0.07 290) 50%, oklch(0.16 0.05 300) 100%)",
+    hero: "radial-gradient(circle at 50% 20%, rgba(119, 93, 255, 0.12) 0%, transparent 40%), radial-gradient(circle at top, #1A1238 0%, #070A16 50%, #03040A 100%)",
+    doodles: "linear-gradient(180deg, var(--paper) 0%, var(--paper) 100%)",
+    confession: "radial-gradient(circle at 50% 20%, rgba(119, 93, 255, 0.08) 0%, transparent 40%), linear-gradient(180deg, #010208 0%, #050816 50%, #0B0F26 100%)",
+    memories: "radial-gradient(circle at 50% 20%, rgba(119, 93, 255, 0.1) 0%, transparent 40%), linear-gradient(180deg, #02030A 0%, #060A1A 50%, #101633 100%)",
+    decision: "radial-gradient(circle at 50% 20%, rgba(119, 93, 255, 0.12) 0%, transparent 40%), linear-gradient(180deg, #03030B 0%, #090D1D 50%, #161238 100%)",
+    final: "radial-gradient(circle at 50% 20%, rgba(119, 93, 255, 0.12) 0%, transparent 40%), linear-gradient(180deg, #03030B 0%, #090D1D 50%, #161238 100%)",
   };
 
   return (
