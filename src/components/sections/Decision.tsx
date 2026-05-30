@@ -27,7 +27,7 @@ export function Decision({ onYes }: { onYes: () => void }) {
   };
 
   return (
-    <section id="decision" data-section="decision" className="min-h-screen relative flex items-center justify-center snap-start pb-20">
+    <section id="decision" data-section="decision" className="min-h-[85dvh] relative flex items-end justify-center snap-start pb-28 pt-12">
 
       <div className="relative z-10 w-full max-w-md px-6 text-center">
 
