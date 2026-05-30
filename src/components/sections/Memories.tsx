@@ -81,7 +81,7 @@ export function Memories() {
   const [expanded, setExpanded] = useState<number | null>(null);
 
   return (
-    <section id="memories" data-section="memories" className="min-h-[85dvh] relative flex flex-col items-center justify-end snap-start pb-28 pt-12 overflow-hidden">
+    <section id="memories" data-section="memories" className="min-h-[100dvh] relative flex flex-col items-center justify-center snap-start pb-16 overflow-hidden">
 
       {/* Heading */}
       <div className="relative z-10 px-8 max-w-md text-center mb-12">

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Hero() {
   return (
-    <section id="hero" data-section="hero" className="min-h-[85dvh] relative flex items-end justify-center snap-start pb-28 pt-12">
+    <section id="hero" data-section="hero" className="min-h-[100dvh] relative flex items-center justify-center snap-start pb-16">
 
       {/* drifting particles */}
       {Array.from({ length: 14 }).map((_, i) => (

@@ -154,7 +154,7 @@ export function Doodles() {
   }, []);
 
   return (
-    <section id="doodles" data-section="doodles" className="min-h-[85dvh] relative flex flex-col justify-end snap-start pb-28 pt-12">
+    <section id="doodles" data-section="doodles" className="min-h-[100dvh] relative flex flex-col justify-center snap-start pb-16">
 
       <div className="relative z-10 pt-8 px-6 text-center">
         <p className="hand text-2xl text-ink/90">terms &amp; conditions</p>
