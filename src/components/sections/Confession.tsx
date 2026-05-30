@@ -37,21 +37,21 @@ export function Confession() {
   return (
     <section id="confession" data-section="confession" className="min-h-[100dvh] relative flex flex-col justify-center snap-start pb-16">
 
-      <div className="relative z-10 pt-8 px-6 text-center">
+      <div className="relative z-10 pt-2 px-6 text-center">
         <p className="hand text-2xl text-[var(--cream)]/90">confessions</p>
         <p className="text-[11px] tracking-[0.3em] text-white/40 uppercase mt-1">scroll sideways →</p>
       </div>
 
       <div
         ref={scrollerRef}
-        className="snap-x-cards relative z-10 mt-6 flex gap-4 px-[9vw] py-8"
+        className="snap-x-cards relative z-10 mt-2 flex gap-4 px-[9vw] py-4"
       >
         {slides.map((slide, i) => {
           const isActive = i === active;
           return (
             <motion.article
               key={i}
-              className="snap-card shrink-0 w-[82vw] max-w-[360px] h-[62vh] max-h-[520px] rounded-2xl overflow-hidden relative flex flex-col justify-center items-center shadow-[0_4px_50px_-12px_rgba(0,0,0,0.6),0_0_30px_-8px_rgba(0,0,0,0.4)]"
+              className="snap-card shrink-0 w-[82vw] max-w-[360px] h-[55vh] max-h-[460px] rounded-2xl overflow-hidden relative flex flex-col justify-center items-center shadow-[0_4px_50px_-12px_rgba(0,0,0,0.6),0_0_30px_-8px_rgba(0,0,0,0.4)]"
               animate={{
                 scale: isActive ? 1 : 0.94,
                 rotate: isActive ? 0 : i < active ? -4 : 4,
@@ -85,7 +85,7 @@ export function Confession() {
         <div className="shrink-0 w-[8vw]" />
       </div>
 
-      <div className="relative z-10 flex justify-center gap-1.5 pb-6">
+      <div className="relative z-10 flex justify-center gap-1.5 pb-10">
         {slides.map((_, i) => (
           <span key={i} className={`h-1 rounded-full transition-all duration-500 ${i === active ? "w-6 bg-[var(--gold)]" : "w-1.5 bg-white/25"}`} />
         ))}

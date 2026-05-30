@@ -156,21 +156,21 @@ export function Doodles() {
   return (
     <section id="doodles" data-section="doodles" className="min-h-[100dvh] relative flex flex-col justify-center snap-start pb-16">
 
-      <div className="relative z-10 pt-8 px-6 text-center">
+      <div className="relative z-10 pt-2 px-6 text-center">
         <p className="hand text-2xl text-ink/90">terms &amp; conditions</p>
         <p className="text-[11px] tracking-[0.3em] text-ink/40 uppercase mt-1">scroll sideways →</p>
       </div>
 
       <div
         ref={scrollerRef}
-        className="snap-x-cards relative z-10 mt-6 flex gap-4 px-[9vw] py-8"
+        className="snap-x-cards relative z-10 mt-2 flex gap-4 px-[9vw] py-4"
       >
         {cards.map((c, i) => {
           const isActive = i === active;
           return (
             <motion.article
               key={i}
-              className="snap-card wobble-border shrink-0 w-[82vw] max-w-[360px] h-[62vh] max-h-[520px] p-6 flex flex-col shadow-[0_0_40px_-5px_rgba(255,255,255,0.25)]"
+              className="snap-card wobble-border shrink-0 w-[82vw] max-w-[360px] h-[55vh] max-h-[460px] p-4 flex flex-col shadow-[0_0_40px_-5px_rgba(255,255,255,0.25)]"
               style={{ backgroundColor: c.color, color: "var(--ink)" }}
               animate={{
                 scale: isActive ? 1 : 0.94,
@@ -187,13 +187,13 @@ export function Doodles() {
                 <span className="hand text-sm opacity-50">{String(i+1).padStart(2,'0')}</span>
               </header>
 
-              <div className="flex-1 flex items-center justify-center my-4">
+              <div className="flex-1 flex items-center justify-center my-2">
                 {c.doodle}
               </div>
 
               <p className="serif text-sm leading-snug">{c.body}</p>
 
-              <footer className="mt-4 pt-3 border-t border-dashed border-ink/30">
+              <footer className="mt-2 pt-2 border-t border-dashed border-ink/30">
                 <p className="hand text-base opacity-70">{c.footer}</p>
               </footer>
             </motion.article>
@@ -202,7 +202,7 @@ export function Doodles() {
         <div className="shrink-0 w-[8vw]" />
       </div>
 
-      <div className="relative z-10 flex justify-center gap-1.5 pb-6">
+      <div className="relative z-10 flex justify-center gap-1.5 pb-10">
         {cards.map((_, i) => (
           <span key={i} className={`h-1 rounded-full transition-all duration-500 ${i===active ? "w-6 bg-[var(--gold)]" : "w-1.5 bg-ink/20"}`} />
         ))}

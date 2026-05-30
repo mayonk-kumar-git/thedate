@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Success() {
   return (
-    <section id="final" data-section="final" className="min-h-[100dvh] relative flex items-center justify-center snap-start pb-16">
+    <section id="final" data-section="final" className="min-h-[100dvh] relative flex items-center justify-center snap-start pb-24">
 
       {Array.from({ length: 18 }).map((_, i) => (
         <motion.span
@@ -14,7 +14,7 @@ export function Success() {
         />
       ))}
 
-      <div className="relative z-10 w-full max-w-lg px-6 text-center py-16">
+      <div className="relative z-10 w-full max-w-lg px-6 text-center pt-4 pb-8">
         <motion.h2
           initial={{ opacity: 0, y: 14, filter: "blur(10px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}

@@ -81,10 +81,10 @@ export function Memories() {
   const [expanded, setExpanded] = useState<number | null>(null);
 
   return (
-    <section id="memories" data-section="memories" className="min-h-[100dvh] relative flex flex-col items-center justify-center snap-start pb-16 overflow-hidden">
+    <section id="memories" data-section="memories" className="min-h-[100dvh] relative flex flex-col items-center justify-center snap-start pb-20 overflow-hidden">
 
       {/* Heading */}
-      <div className="relative z-10 px-8 max-w-md text-center mb-12">
+      <div className="relative z-10 px-8 max-w-md text-center mb-3">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -106,7 +106,7 @@ export function Memories() {
       </div>
 
       {/* Memory Universe */}
-      <div className="relative z-10 w-full max-w-md h-[50vh] mx-auto">
+      <div className="relative z-10 w-full max-w-md h-[45vh] mx-auto px-6">
         {bubbles.map((bubble) => {
           const style = getBubbleStyle(bubble);
           const pathIndex = bubble.id % blobPaths.length;
@@ -245,7 +245,7 @@ export function Memories() {
       </AnimatePresence>
 
       {/* Bottom text */}
-      <div className="relative z-10 px-8 max-w-md text-center mt-12">
+      <div className="relative z-10 px-8 max-w-md text-center mt-8">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
