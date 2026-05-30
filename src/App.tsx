@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { PasswordScreen } from "@/components/PasswordScreen";
 import { Loading } from "@/components/Loading";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
@@ -10,6 +11,7 @@ import { Decision } from "@/components/sections/Decision";
 import { Success } from "@/components/sections/Success";
 
 export function App() {
+  const [authenticated, setAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
   const [active, setActive] = useState("hero");
   const [showSuccess, setShowSuccess] = useState(false);
@@ -48,7 +50,7 @@ export function App() {
       container.removeEventListener("scrollend", updateActive);
       container.removeEventListener("scroll", updateActive);
     };
-  }, [showSuccess]);
+  }, [authenticated, showSuccess]);
 
   const jumpTo = (id: string) => {
     setActive(id);
@@ -74,32 +76,40 @@ export function App() {
 
   return (
     <div className="relative w-full h-dvh">
-      {/* Fixed background that crossfades */}
-      {Object.entries(backgrounds).map(([id, bg]) => (
-        <motion.div
-          key={id}
-          animate={{ opacity: active === id ? 1 : 0 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="fixed inset-0 z-0 pointer-events-none"
-          style={{ background: bg }}
-        />
-      ))}
-      <div className="fixed inset-0 z-0 pointer-events-none grain" />
+      {/* Password screen */}
+      {!authenticated && <PasswordScreen onSuccess={() => setAuthenticated(true)} />}
 
-      <div ref={scrollRef} className="relative z-10 w-full h-dvh overflow-y-auto overflow-x-hidden snap-y snap-mandatory text-foreground scrollbar-hide">
-        <AnimatePresence>
-          {loading && <Loading onDone={() => setLoading(false)} />}
-        </AnimatePresence>
+      {/* Only render content after authentication */}
+      {authenticated && (
+        <>
+          {/* Fixed background that crossfades */}
+          {Object.entries(backgrounds).map(([id, bg]) => (
+            <motion.div
+              key={id}
+              animate={{ opacity: active === id ? 1 : 0 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="fixed inset-0 z-0 pointer-events-none"
+              style={{ background: bg }}
+            />
+          ))}
+          <div className="fixed inset-0 z-0 pointer-events-none grain" />
 
-        <Navbar active={active} onJump={jumpTo} />
+          <div ref={scrollRef} className="relative z-10 w-full h-dvh overflow-y-auto overflow-x-hidden snap-y snap-mandatory text-foreground scrollbar-hide">
+            <AnimatePresence>
+              {loading && <Loading onDone={() => setLoading(false)} />}
+            </AnimatePresence>
 
-        <Hero />
-        <Doodles />
-        <Confession />
-        <Memories />
-        <Decision onYes={handleYes} />
-        {showSuccess && <Success />}
-      </div>
+            <Navbar active={active} onJump={jumpTo} />
+
+            <Hero />
+            <Doodles />
+            <Confession />
+            <Memories />
+            <Decision onYes={handleYes} />
+            {showSuccess && <Success />}
+          </div>
+        </>
+      )}
     </div>
   );
 }
