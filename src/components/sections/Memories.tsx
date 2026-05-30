@@ -24,12 +24,12 @@ type Bubble = {
 };
 
 const futurePlaceholders = [
-  "awaiting a sunset together",
+  "awaiting a sunset together...",
   "future memory loading...",
   "loading shared laughter...",
-  "placeholder for our first trip",
-  "reserved for spontaneous adventures",
-  "photo not taken yet",
+  "placeholder for our first trip...",
+  "reserved for spontaneous adventures...",
+  "photo not taken yet...",
 ];
 
 const bubbles: Bubble[] = [
@@ -230,11 +230,11 @@ export function Memories() {
                 />
               </svg>
               <div className="relative z-10 text-center px-8 mt-4">
-                <p className="serif italic text-lg text-cream/90">
+                <p className="serif italic text-xs text-cream/40">
                   {bubbles.find(b => b.id === expanded)?.caption}
                 </p>
                 {bubbles.find(b => b.id === expanded)?.type === "future" && (
-                  <p className="hand text-sm text-white/40 mt-3">
+                  <p className="hand text-xl text-white/90 mt-1">
                     {bubbles.find(b => b.id === expanded)?.label}
                   </p>
                 )}
