@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const popups = [
@@ -13,6 +13,7 @@ export function Decision({ onYes }: { onYes: () => void }) {
   const [lives, setLives] = useState(5);
   const [popup, setPopup] = useState<string | null>(null);
   const [morphing, setMorphing] = useState(false);
+  const popupTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const noAbsorbed = lives === 0;
 
   const handleNo = () => {
@@ -20,7 +21,8 @@ export function Decision({ onYes }: { onYes: () => void }) {
     const next = lives - 1;
     setLives(next);
     setPopup(popups[5 - lives]);
-    setTimeout(() => setPopup(null), 2800);
+    if (popupTimer.current) clearTimeout(popupTimer.current);
+    popupTimer.current = setTimeout(() => setPopup(null), 4500);
     if (next === 0) {
       setTimeout(() => setMorphing(true), 800);
     }
